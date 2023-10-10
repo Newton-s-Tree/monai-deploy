@@ -11,9 +11,9 @@ mig:
   tag: 0.4.1
   pullPolicy: IfNotPresent
   imagePullSecrets: []
-  serviceType: NodePort
-  dimsePort: 104
-  apiPort: 6000
+  serviceType: LoadBalancer
+  dimsePort: 30005
+  apiPort: 32000
   storagePath: /opt/monai-deploy/mig
   logsSize: 1Gi
   payloadSize: 10Gi
@@ -40,8 +40,8 @@ mwm:
   tag: 2023.5.0-pr0874.169
   pullPolicy: IfNotPresent
   imagePullSecrets: []
-  serviceType: NodePort
-  apiPort: 6000
+  serviceType: LoadBalancer
+  apiPort: 32000
   storagePath: /opt/monai-deploy/mwm
   logsSize: 1Gi
   resources: {}
@@ -63,8 +63,8 @@ mtm:
   tag: 2023.5.0-pr0874.169
   pullPolicy: IfNotPresent
   imagePullSecrets: []
-  serviceType: NodePort
-  apiPort: 6000
+  serviceType: LoadBalancer
+  apiPort: 32000
   storagePath: /opt/monai-deploy/mtm
   logsSize: 1Gi
   resources: {}
@@ -80,7 +80,7 @@ mtm:
     #   memory: 128Mi
 
 minio:
-  name: minio
+  name: miniop
   serviceName: minio
   repository: minio/minio
   tag: latest
@@ -88,7 +88,7 @@ minio:
   imagePullSecrets: []
   username: monai
   password: minioadmin
-  serviceType: NodePort
+  serviceType: LoadBalancer
   storagePath: /opt/monai-deploy/minio
   dataSize: 100Gi
   configSize: 1Gi
@@ -126,7 +126,7 @@ mongo:
   imagePullSecrets: []
   username: monai
   password: monai
-  serviceType: NodePort
+  serviceType: LoadBalancer
   storagePath: /opt/monai-deploy/mongo
   size: 1Gi
   port: 27017
@@ -153,7 +153,7 @@ orthanc:
   password: monai
   storagePath: /opt/monai-deploy/orthanc
   size: 100Gi
-  serviceType: NodePort
+  serviceType: LoadBalancer
   port: 8042
   dimsePort: 4242
   appSettings:
@@ -182,7 +182,7 @@ rabbitmq:
   password: monai
   erlangCookie: SWQOKODSQALRPCLNMEQG
   vhost: monaideploy
-  serviceType: NodePort
+  serviceType: LoadBalancer
   storagePath: /opt/monai-deploy/rabbitmq
   size: 1Gi
   port: 5672
@@ -210,7 +210,7 @@ postgres:
   password: monai
   erlangCookie: SWQOKODSQALRPCLNMEQG
   vhost: monaideploy
-  serviceType: NodePort
+  serviceType: LoadBalancer
   storagePath: /opt/monai-deploy/postgres
   size: 1Gi
   port: 5432

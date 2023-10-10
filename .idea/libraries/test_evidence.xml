@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="test-evidence">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_004_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_034_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_040_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_027_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_037_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_030_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_001_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_017_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_011_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_007_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_021_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_003_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_036_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_031_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_002_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_026_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_016_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_035_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_006_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_012_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_019_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_009_010_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_025_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_039_Partial_Pass.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_013_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_015_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_023_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_005_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_038_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_028_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_020_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_014_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_008_Passed.zip!/" />
+      <root url="jar://$PROJECT_DIR$/e2e-testing/test-evidence/MONAI_E2E_018_Passed.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

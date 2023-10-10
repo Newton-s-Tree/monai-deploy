@@ -9,7 +9,7 @@
     "InformaticsGateway": {
       "dicom": {
         "scp": {
-          "port": 104,
+          "port": 30005,
           "logDimseDatasets": false,
           "rejectUnknownSources": false
         },
@@ -68,7 +68,7 @@
     "Kestrel": {
       "EndPoints": {
         "Http": {
-          "Url": "http://+:5000"
+          "Url": "http://+:32000"
         }
       }
     },
@@ -79,7 +79,7 @@
       "HostPlugInsStorageMount": "~/.mig/plug-ins",
       "HostDatabaseStorageMount": "~/.mig/database",
       "HostLogsStorageMount": "~/.mig/logs",
-      "InformaticsGatewayServerEndpoint": "http://localhost:5000",
+      "InformaticsGatewayServerEndpoint": "http://localhost:32000",
       "DockerImagePrefix": "ghcr.io/project-monai/monai-deploy-informatics-gateway"
     }
   }

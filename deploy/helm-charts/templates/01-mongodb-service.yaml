@@ -4,7 +4,10 @@ metadata:
   name: {{ .Values.mongo.serviceName }}
   labels:
     {{- include "local.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 spec:
+  externalTrafficPolicy: Local
   type: {{ .Values.mongo.serviceType }}
   ports:
     - port: {{ .Values.mongo.port }}
