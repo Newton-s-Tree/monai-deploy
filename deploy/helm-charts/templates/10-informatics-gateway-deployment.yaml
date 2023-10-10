@@ -42,19 +42,19 @@ spec:
           imagePullPolicy: {{ .Values.mig.pullPolicy }}
           ports:
             - name: dimse-port
-              containerPort: 104
+              containerPort: 30005
               protocol: TCP
             - name: mig-api-port
-              containerPort: 5000
+              containerPort: 32000
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /health/
-              port: 5000
+              port: 32000
           readinessProbe:
             httpGet:
               path: /health/
-              port: 5000
+              port: 32000
           volumeMounts:
           - name: {{ .Release.Name }}-logs
             mountPath: /opt/monai/ig/logs

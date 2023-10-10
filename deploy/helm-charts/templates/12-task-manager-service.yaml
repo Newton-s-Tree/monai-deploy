@@ -4,7 +4,10 @@ metadata:
   name: {{ .Values.mtm.serviceName }}
   labels:
     {{- include "local.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 spec:
+  externalTrafficPolicy: Local
   type: {{ .Values.mtm.serviceType }}
   ports:
     - port: {{ .Values.mtm.apiPort }}
