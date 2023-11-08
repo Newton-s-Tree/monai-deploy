@@ -80,7 +80,7 @@ mtm:
     #   memory: 128Mi
 
 minio:
-  name: miniop
+  name: minio
   serviceName: minio
   repository: minio/minio
   tag: latest
@@ -261,9 +261,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-nvidia-device-plugin:
-  allowDefaultNamespace: true
 
 ### Argo Workflow ###
 argo-workflows:
