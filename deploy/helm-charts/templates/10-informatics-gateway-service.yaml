@@ -4,16 +4,19 @@ metadata:
   name: {{ .Values.mig.serviceName }}
   labels:
     {{- include "local.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 spec:
+  externalTrafficPolicy: Local
   type: {{ .Values.mig.serviceType }}
   ports:
     - name: dimse
-      port: 104
+      port: 30005
       nodePort: {{ .Values.mig.dimsePort }}
       targetPort: dimse-port
       protocol: TCP
     - name: mig-api
-      port: 5000
+      port: 32000
       nodePort: {{ .Values.mig.apiPort }}
       targetPort: mig-api-port
       protocol: TCP

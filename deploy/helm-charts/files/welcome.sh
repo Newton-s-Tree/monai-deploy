@@ -101,17 +101,18 @@ echo ====================================
 
 
 printf "\nDeleting existing MONAI Deploy AE Title..."
-curl -s --request DELETE "http://$NODE_IP:$MIG_API_PORT/config/ae/MONAI-DEPLOY" >/dev/null
+curl -s --request DELETE "http://mig.newtonstree.ai:32000/config/ae/MONAI-DEPLOY" >/dev/null
 printf "\nDeleting existing DICOM Source..."
-curl -s --request DELETE "http://$NODE_IP:$MIG_API_PORT/config/source/ORTHANC" >/dev/null
-curl -s --request DELETE "http://$NODE_IP:$MIG_API_PORT/config/source/STORESCU" >/dev/null
+curl -s --request DELETE "http://mig.newtonstree.ai:32000/config/source/ORTHANC" >/dev/null
+curl -s --request DELETE "http://mig.newtonstree.ai:32000/config/source/STORESCU" >/dev/null
 printf "\nDeleting existing DICOM Destination..."
-curl -s --request DELETE "http://$NODE_IP:$MIG_API_PORT/config/destination/ORTHANC" >/dev/null
+curl -s --request DELETE "http://mig.newtonstree.ai:32000/config/destination/ORTHANC" >/dev/null
 
 printf "\nAdding MONAI Deploy AE Title (MONAI-DEPLOY)..."
-curl -s --request POST "http://$NODE_IP:$MIG_API_PORT/config/ae" --header "Content-Type: application/json" --data-raw "{\"name\": \"MONAI-DEPLOY\",\"aeTitle\": \"MONAI-DEPLOY\", \"timeout\": 3}" >/dev/null
+curl -s --request POST "http://mig.newtonstree.ai:32000/config/ae" --header "Content-Type: application/json" --data-raw "{\"name\": \"MONAI-DEPLOY\",\"aeTitle\": \"MONAI-DEPLOY\", \"timeout\": 3}" >/dev/null
 printf "\nAdding DICOM Source (ORTHANC)..."
-curl -s --request POST "http://$NODE_IP:$MIG_API_PORT/config/source" --header "Content-Type: application/json" --data-raw "{\"name\": \"ORTHANC\",\"hostIp\": \"$ORTHANC_IP\",\"aeTitle\": \"ORTHANC\"}" >/dev/null
+curl -s --request POST "http://mig.newtonstree.ai:32000/config/source" --header "Content-Type: application/json" --data-raw "{\"name\": \"ORTHANC\",\"hostIp\": \"192.168.31.212\",\"aeTitle\": \"ORTHANC\"}" >/dev/null
+
 
 IFS=' ' read -a HOST_IPS <<< $(hostname -I)
 COUNT=1
@@ -122,12 +123,19 @@ do
     ((COUNT++))
 done
 
+
+HOST_IP=$(hostname -I | awk '{print $1}')
+printf "\nAdding DICOM Source (STORESCU @ $HOST_IP)..."
+curl -s --request POST "http://mig.newtonstree.ai:32000/config/source" --header "Content-Type: application/json" --data-raw "{\"name\": \"STORESCU\",\"hostIp\": \"192.168.31.212\",\"aeTitle\": \"STORESCU\"}" >/dev/null
+
+
+
 printf "\nAdding DICOM Destination..."
-curl -s --request POST "http://$NODE_IP:$MIG_API_PORT/config/destination" --header "Content-Type: application/json" --data-raw "{\"name\": \"ORTHANC\",\"hostIp\": \"$NODE_IP\",\"port\": $ORTHANC_DIMSE_PORT,\"aeTitle\": \"ORTHANC\"}" >/dev/null
+curl -s --request POST "http://mig.newtonstree.ai:32000/config/destination" --header "Content-Type: application/json" --data-raw "{\"name\": \"ORTHANC\",\"hostIp\": \"192.168.31.212\",\"port\": 4242,\"aeTitle\": \"ORTHANC\"}" >/dev/null
 
 printf "\nMONAI Deploy AE Titles:\n"
-curl -f --request GET "http://$NODE_IP:$MIG_API_PORT/config/ae" 2>/dev/null | jq
+curl -f --request GET "http://mig.newtonstree.ai:32000/config/ae"
 printf "\nDICOM Sources:\n"
-curl -f --request GET "http://$NODE_IP:$MIG_API_PORT/config/source" 2>/dev/null | jq
+curl -f --request GET "http://mig.newtonstree.ai:32000/config/source"
 printf "\nDICOM Destinations:\n"
-curl -f --request GET "http://$NODE_IP:$MIG_API_PORT/config/destination" 2>/dev/null | jq
+curl -f --request GET "http://mig.newtonstree.ai:32000/config/destination"

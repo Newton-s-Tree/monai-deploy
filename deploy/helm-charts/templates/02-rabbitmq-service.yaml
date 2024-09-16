@@ -4,7 +4,10 @@ metadata:
   name: {{ .Values.rabbitmq.serviceName }}
   labels:
     {{- include "local.labels" . | nindent 4 }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 spec:
+  externalTrafficPolicy: Local
   type: {{ .Values.rabbitmq.serviceType }}
   ports:
     - port: {{ .Values.rabbitmq.port }}

@@ -87,7 +87,7 @@
   "Kestrel": {
     "EndPoints": {
       "Http": {
-        "Url": "http://+:5000"
+        "Url": "http://+:32000"
       }
     },
     "LogHttpRequestQuery": false,
